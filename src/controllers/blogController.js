@@ -10,7 +10,7 @@ const getAllDocument = async (req, res) => {
 
   try {
     const api = await axios.get(
-      "https://emrealtunbilek.com/wp-json/wp/v2/posts?per_page=20&" + pagination
+      "https://yusufkaraaslan.com/wp-json/wp/v2/posts?per_page=20&" + pagination
     );
     res
       .status(200)
@@ -27,7 +27,7 @@ const getAllDocument = async (req, res) => {
 const getOneDocument = async (req, res) => {
   try {
     const api = await axios.get(
-      `https://emrealtunbilek.com/wp-json/wp/v2/posts/${req.params.id}`
+      `https://yusufkaraaslan.com/wp-json/wp/v2/posts/${req.params.id}`
     );
     res.status(200).render("./docs/document", { data: api.data });
   } catch (error) {
@@ -47,7 +47,7 @@ const searchDocument = async (req, res) => {
 
   try {
     const api = await axios.get(
-      `https://emrealtunbilek.com/wp-json/wp/v2/posts?search=${req.body.search}`
+      `https://yusufkaraaslan.com/wp-json/wp/v2/posts?search=${req.body.search}`
     );
     res.status(200).render("./docs/index", { data: api.data, pagination, active });
   } catch (error) {
