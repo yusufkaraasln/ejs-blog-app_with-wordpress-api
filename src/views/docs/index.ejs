@@ -1,0 +1,23 @@
+<%- include("../partials/_navbar.ejs") %> 
+
+
+
+
+
+
+<div class="columns is-multiline">
+    <% data.forEach((data,index)=>{ %>
+
+
+    <div class="column is-4">
+
+        <%- include("../partials/_card",{data,index}) %> 
+
+        </div>
+
+
+        <% }) %> 
+</div>
+<br><br>
+<%- include("../partials/_pagination",{pagination,active}) %> 
+<br><br>

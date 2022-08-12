@@ -1,0 +1,37 @@
+<nav class="pagination" role="navigation" aria-label="pagination">
+  
+    <% 
+        let activePage = active
+        let currentPage = pagination
+        let previous = activePage-1
+        let next = Number(activePage)+1
+        %> 
+
+
+    
+        <a <%= activePage!=1 ? "href=/?page="+previous : "" %>  class="pagination-previous <%= activePage==1 ? "is-disabled" : ""  %>   " title="This is the first page"
+            >Previous</a
+          >
+        
+
+       
+  <a <%= activePage != currentPage ? "href=/?page="+next  : "" %>     class="pagination-next <%= activePage==currentPage ? "is-disabled" : "" %>  ">Next page</a>
+           
+        
+
+  <ul class="pagination-list">
+    <% for( let index = 1; index <= currentPage; index++ ) { %>
+
+    <li>
+
+      <a
+        href="/?page=<%= index%> "
+        class="pagination-link <%= index== activePage ? 'is-current' : '' %>"
+        aria-label="Page 1"
+        aria-current="page"
+        ><%- index %>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</nav>

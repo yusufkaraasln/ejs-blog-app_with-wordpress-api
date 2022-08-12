@@ -1,0 +1,45 @@
+<% let height = `90${index}`; index == undefined ? height = `600` : height =
+`60${index}`; %>
+
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img
+        src="https://source.unsplash.com/random/1280x96<%= height %>"
+        alt="Placeholder image"
+      />
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img
+            src="https://bulma.io/images/placeholders/96x96.png"
+            alt="Placeholder image"
+          />
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"><%- data.title.rendered %></p>
+      </div>
+    </div>
+
+    <div class="content">
+      <%- index == undefined ? data.content.rendered :data.excerpt.rendered.slice(0,60) %>
+
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br />
+      <% const date = data.date.split("T") %>
+
+      <p><%- date[1] %> / <%- date[0] %></p>
+
+        <% if (index!==undefined) { %>
+          <a href="/<%-data.id %> ">More about...</a>
+         
+        <% } %>
+
+
+    </div>
+  </div>
+</div>
